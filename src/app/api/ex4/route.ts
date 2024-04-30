@@ -12,10 +12,10 @@ import { RunnableSequence } from '@langchain/core/runnables'
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 
-const loader = new JSONLoader(
-    "src/data/states.json",
-    ["/state", "/code", "/nickname", "/website", "/admission_date", "/admission_number", "/capital_city", "/capital_url", "/population", "/population_rank", "/constitution_url", "/twitter_url"],
-);
+// const loader = new JSONLoader(
+//     "src/data/states.json",
+//     ["/state", "/code", "/nickname", "/website", "/admission_date", "/admission_number", "/capital_city", "/capital_url", "/population", "/population_rank", "/constitution_url", "/twitter_url"],
+// );
 
 export const dynamic = 'force-dynamic'
 
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
 
         const currentMessageContent = messages[messages.length - 1].content;
 
-        const docs = await loader.load();
+        // const docs = await loader.load();
 
         // load a JSON object
         // const textSplitter = new CharacterTextSplitter();
@@ -86,7 +86,7 @@ export async function POST(req: Request) {
             {
                 question: (input) => input.question,
                 chat_history: (input) => input.chat_history,
-                context: () => formatDocumentsAsString(docs),
+                // context: () => formatDocumentsAsString(),
             },
             prompt,
             model,
