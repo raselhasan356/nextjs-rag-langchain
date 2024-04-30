@@ -25,9 +25,9 @@ export function Chat() {
     <main className="flex flex-col w-full h-screen max-h-dvh bg-background">
       <header className="p-4 border-b w-full max-w-3xl mx-auto">
         <h1 className="text-2xl font-bold">
-          Spent hours to gift you this experience, This is 'Okhi', an AI
+          {` Spent hours to gift you this experience, This is 'Okhi', an AI
           chatbot, who knows you, cares about your feelings. Have a nice
-          conversation with 'Okhi'...
+          conversation with 'Okhi'...`}
         </h1>
       </header>
 
