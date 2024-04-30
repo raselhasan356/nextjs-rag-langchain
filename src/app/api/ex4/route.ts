@@ -86,7 +86,7 @@ export async function POST(req: Request) {
             {
                 question: (input) => input.question,
                 chat_history: (input) => input.chat_history,
-                // context: () => formatDocumentsAsString(),
+                context: () => "",
             },
             prompt,
             model,
